@@ -37,4 +37,5 @@ def logout(request):
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('index'))
     
-    
+def register(request):
+    return render(request, 'register.html')
