@@ -54,10 +54,16 @@
                 <hr class="block-divider">
                 <p class="lead">
                     <ul>
-                        <li> <a href="{% url 'login' %}">Login</a></li>
-                        <li>Register</li>
-                        <li>Profile</li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>        
+                        
+                        {% if not user.is_authenticated %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li>Register</li>
+                        {% endif %}
+                        
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% endif %}  
+                        
                     </ul>
                     <hr/>
                     <!--<a class="btn btn-warning" href="">Assign me a Career Coach</a>-->
