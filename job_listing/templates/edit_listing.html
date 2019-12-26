@@ -4,12 +4,24 @@
 
 {% block content %}
     <!-- Callout -->
-    <div class="container-fluid callout-container">
-        <h2>Editing Job Listing</h2>
+    <div class="container-fluid pt-3">
+        <div class='row justify-content-around px-3'>
+            <div class='col-3 '>
+                <h3><i>EDIT JOB DETAILS</i></h3>
+                <a class='p-2 btn-warning' href="{% url 'show_listing' %}"> &lt &lt return</a>
+
+            </div>
+            <div class="col-5 jumbotron text-left">
+                <form method='POST'>
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                     <input class='btn btn-secondary' type="submit">
+                </form>
+            </div>
+        </div>
     </div>
     <!-- /.callout -->
 {% endblock %}
-        
 
     
 

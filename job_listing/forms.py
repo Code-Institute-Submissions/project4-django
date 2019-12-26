@@ -11,4 +11,15 @@ class Newjob(forms.ModelForm):
             'salary',
             'description',
         )
+
+class Editjob(forms.ModelForm):
+    class Meta:
+        model = job_database
+        fields = (
+            'company',
+            'department',
+            'position',
+            'salary',
+            'description',
+        )
         

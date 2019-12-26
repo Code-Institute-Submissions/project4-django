@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
-from .forms import Newjob
+from .forms import Newjob, Editjob
 from .models import job_database
 
 # Create your views here.
@@ -25,8 +25,22 @@ def add_listing(request):
             'form' : new_listing
             })
 
-def edit_listing(request):
+def edit_listing(request, id):
+    job = get_object_or_404(job_database, pk=id)
+    
+    if request.method == "POST":
+        edit_job = Editjob(request.POST, instance=job)
+        if edit_job.is_valid():
+            edit_job.user = request.user
+            edit_job.save()
+            return redirect(show_listing)
+    else:
+        edit_job = Editjob(instance=job)
+        return render(request, 'edit_listing.html',{
+            'form': edit_job
+        })
     return render(request, 'edit_listing.html')
-
+    
+    
 def confirm_delete(request):
     return render(request, 'confirm_delete.html')

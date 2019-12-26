@@ -28,7 +28,7 @@
         <td> {{ d.salary }}</td>
         <td class='text-right'>
           |<a class='text-secondary badge' href="">Apply </a> |
-          <a class='text-secondary badge' href="{% url 'edit_listing' %}">Edit </a> |
+          <a class='text-secondary badge' href="edit_listing/{{d.id}}">Edit </a> |
           <a class='text-danger badge' href="{% url 'confirm_delete' %}">Delete </a> |
         </td>
       </tr>
