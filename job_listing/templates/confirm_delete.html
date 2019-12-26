@@ -5,7 +5,12 @@
 {% block content %}
     <!-- Callout -->
     <div class="container-fluid callout-container">
-        <h2>Confirm Delete</h2>
+        <div class='text-center'>
+        <h2>You are about to remove the following Job listing</h2><br/>
+        <h4> Company Name : {{job.company}} </h4>
+        <h4> Position : {{ job.position}}</h4>
+        <a class="btn btn-danger" href="../delete_job/{{ job.id }}">Proceed to remove listing</a>
+        </div>
     </div>
     <!-- /.callout -->
 {% endblock %}
