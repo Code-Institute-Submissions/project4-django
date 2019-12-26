@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'job_listing',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,8 @@ AUTHENTICATION_BACKENDS = (
 
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+# enable static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
