@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} No.1 Recruitment Firm Singapore | Best Job Portal{% endblock %}
+
+{% block content %}
+    <div class="container-fluid callout-container">
+        <div class='text-center'>
+        <h3>There will be a charge of $10 for the new posting</h3>
+        <form method="POST">
+          {% csrf_token %}
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="{{ key }}"
+                  data-description="Advert"
+                  data-amount="{{amount}}"
+                  data-locale="auto"></script>
+          <input type='hidden' name='amount' value='{{amount}}'/>
+          </div>
+        </form>
+    </div>
+{% endblock %}

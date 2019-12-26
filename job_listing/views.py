@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from .forms import Newjob, Editjob
 from .models import job_database
+# from payment.views import charge
 
 # Create your views here.
 
