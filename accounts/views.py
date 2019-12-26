@@ -69,5 +69,10 @@ def register(request):
         form = UserRegistrationForm()
         return render(request, 'register.html', {
             'form':form
-        })\
+        })
+
+def reset_password(request):
+    return render(request, 'reset_password.html')
+    
+    
         
