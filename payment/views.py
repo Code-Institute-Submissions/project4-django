@@ -6,13 +6,13 @@ from job_listing.views import show_listing
 def charge(request):
     if request.method == 'GET':
         amount = 1000
-        key = '' #1
+        key = settings.STRIPE_PUBLISHABLE_KEY #1
         return render(request, 'charge.html',{
             'key' : key,
             'amount' : amount
         })
     else:
-        stripe.api_key = '' #2
+        stripe.api_key = settings.STRIPE_SECRET_KEY #2
         charge = stripe.Charge.create(
             amount=1000,
             currency='sgd',
