@@ -5,16 +5,18 @@
 {% block content %}
   <!-- Listing -->
   <main class='container-fluid'>
-    <h3>Show Listing</h3>
+   
     <table class="table">
       <thead>
-    <tr>
-      <th scope="col">Company</th>
-      <th scope="col">Position</th>
-      <th scope="col">Description</th>
-      <th scope="col">Salary</th>
-      <th scope="col"></th>
-    </tr>
+        <tr class='bg-light'>
+          <th scope="col">Company</th>
+          <th scope="col">Position</th>
+          <th scope="col">Description</th>
+          <th scope="col">Salary</th>
+          <th scope="col" class='text-right'>
+            <a class='p-2 badge badge-secondary' href="{% url 'add_listing' %}">Add New Job Posting</a>
+          </th>
+        </tr>
       </thead>
       
       <tbody>
@@ -24,7 +26,11 @@
         <td> {{ d.company }} </td>
         <td> {{ d.description }} </td>
         <td> {{ d.salary }}</td>
-        <td><a class='text-dark' href="">Apply </a></td>
+        <td class='text-right'>
+          |<a class='text-secondary badge' href="">Apply </a> |
+          <a class='text-secondary badge' href="{% url 'edit_listing' %}">Edit </a> |
+          <a class='text-danger badge' href="{% url 'confirm_delete' %}">Delete </a> |
+        </td>
       </tr>
       {% endfor %}
       </tbody>
