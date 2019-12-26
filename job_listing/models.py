@@ -2,13 +2,15 @@ from django.db import models
 from accounts.models import MyUser
 
 # Create your models here.
-class job_listing(models.Model):
+class job_database(models.Model):
     user = models.ForeignKey(
         MyUser, on_delete=models.CASCADE,
         null= False,
         blank = False
         )
         
+    company = models.CharField(max_length=30)
+    
     # Department choices and model field
     DEPARTMENT = [
         ('Sales','Sales'),
@@ -41,6 +43,9 @@ class job_listing(models.Model):
         choices = SALARY_CHOICES,
         default = '4000'
     )
+    
+    description = models.TextField(max_length = 255)
+
     def __str__(self):
         return (self.position)
 

@@ -3,11 +3,34 @@
 {% block title %} No.1 Recruitment Firm Singapore | Best Job Portal{% endblock %}
 
 {% block content %}
-    <!-- Callout -->
-    <div class="container-fluid callout-container">
-        <h2>Show Job Listing</h2>
-    </div>
-    <!-- /.callout -->
+  <!-- Listing -->
+  <main class='container-fluid'>
+    <h3>Show Listing</h3>
+    <table class="table">
+      <thead>
+    <tr>
+      <th scope="col">Company</th>
+      <th scope="col">Position</th>
+      <th scope="col">Description</th>
+      <th scope="col">Salary</th>
+      <th scope="col"></th>
+    </tr>
+      </thead>
+      
+      <tbody>
+      {% for d in data %}
+      <tr>
+        <td> {{ d.position }} </td>
+        <td> {{ d.company }} </td>
+        <td> {{ d.description }} </td>
+        <td> {{ d.salary }}</td>
+        <td><a class='text-dark' href="">Apply </a></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </main>
+  <!-- /listing -->
 {% endblock %}
         
 

@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'accounts.MyUser' 
+AUTH_USER_MODEL = 'accounts.MyUser'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by custom User model, regardless of `allauth`

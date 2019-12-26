@@ -4,8 +4,19 @@
 
 {% block content %}
     <!-- Callout -->
-    <div class="container-fluid callout-container">
-        <h2>Add Job Listing</h2>
+    <div class="container-fluid pt-3">
+        <div class='row justify-content-around px-4'>
+            <div class="col-6 jumbotron text-left">
+                <h3> New Role Details</h3>
+                <hr/>
+                <form method='POST'>
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                     <input class='btn btn-secondary' type="submit">
+                </form>
+            </div>
+           
+        </div>
     </div>
     <!-- /.callout -->
 {% endblock %}

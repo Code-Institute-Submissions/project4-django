@@ -1,4 +1,5 @@
 from django.contrib import admin
+from .models import job_database
 
 # Register your models here.
-from .models import job_listing
+admin.site.register(job_database)
