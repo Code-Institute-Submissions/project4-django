@@ -42,7 +42,6 @@ def edit_listing(request, id):
         })
     return render(request, 'edit_listing.html')
     
-    
 def confirm_delete(request, id):
     job = get_object_or_404(job_database, pk=id)
     return render(request, 'confirm_delete.html', {

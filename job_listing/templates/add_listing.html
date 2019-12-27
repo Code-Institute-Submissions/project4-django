@@ -9,6 +9,10 @@
             <div class='col-3 badge'>
                 <h3><i>ENTER JOB DETAILS</i></h3>
                 <a class='p-2 btn-warning' href="{% url 'show_listing' %}"> &lt &lt return</a>
+                <div>
+                    <p>Click the following to make payment for the advert to go live</p>
+                    <a class='p-2 badge badge-secondary' href="{% url 'charge' %}"></a>
+                </div>
 
             </div>
             <div class="col-5 jumbotron text-left">
@@ -16,6 +20,7 @@
                      {% csrf_token %}
                      {{ form.as_p }}
                      <input class='btn btn-secondary' type="submit">
+
                 </form>
             </div>
         </div>
