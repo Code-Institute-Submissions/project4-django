@@ -14,7 +14,9 @@
           <th scope="col">Description</th>
           <th scope="col">Salary</th>
           <th scope="col" class='text-right'>
+            {% if request.user.username %}
             <a class='p-2 badge badge-secondary' href="{% url 'add_listing' %}">Add New Job Posting</a>
+            {% endif %}
           </th>
         </tr>
       </thead>
@@ -28,8 +30,10 @@
         <td> {{ d.salary }}</td>
         <td class='text-right'>
           |<a class='text-secondary badge' href="">Apply </a> |
+          {% if request.user.username %}
           <a class='text-secondary badge' href="edit_listing/{{d.id}}">Edit </a> |
           <a class='text-danger badge' href="confirm_delete/{{d.id}}">Delete </a> |
+          {% endif %}
         </td>
       </tr>
       {% endfor %}
